@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Layout, List } from 'pages';
+import { Home, Hotel, Layout, List, SharedLayout } from 'pages';
 
 function App() {
   return (
@@ -7,7 +7,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='hotels' element={<List />} />
+          <Route path='hotels' element={<SharedLayout />}>
+            <Route index element={<List />} />
+            <Route path='/:slug' element={<Hotel />} />
+          </Route>
         </Route>
       </Routes>
     </Router>
