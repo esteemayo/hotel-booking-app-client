@@ -7,10 +7,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='hotels' element={<SharedLayout />}>
+          <Route path='hotels' element={<List />} />
+          <Route path='hotels/:slug' element={<Hotel />} />
+          {/* <Route path='hotels' element={<SharedLayout />}>
             <Route index element={<List />} />
             <Route path='/:slug' element={<Hotel />} />
-          </Route>
+          </Route> */}
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
