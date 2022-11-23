@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Hotel, Layout, List, SharedLayout } from 'pages';
+import { Home, Hotel, Layout, List, NotFound, SharedLayout } from 'pages';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
             <Route index element={<List />} />
             <Route path='/:slug' element={<Hotel />} />
           </Route>
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </Router>
