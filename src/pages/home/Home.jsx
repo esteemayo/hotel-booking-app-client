@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <div className='home'>
       <Featured />
+      <h1 className='home__title'>Browse by property type</h1>
     </div>
   );
 };
