@@ -93,14 +93,14 @@ const Header = () => {
                 <div className='options__counter'>
                   <button
                     className='options__counter--btn'
-                    onClick={() => handleOption('adult', 'dec')}
+                    onClick={() => handleOption('adults', 'dec')}
                   >
                     -
                   </button>
                   <span className='options__counter--number'>1</span>
                   <button
                     className='options__counter--btn'
-                    onClick={() => handleOption('adult', 'inc')}
+                    onClick={() => handleOption('adults', 'inc')}
                   >
                     +
                   </button>
