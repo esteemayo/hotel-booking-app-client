@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Hotel, Layout, List, NotFound, SharedLayout } from 'pages';
+import { Home, Hotel, Layout, List, NotFound } from 'pages';
 
 function App() {
   return (
