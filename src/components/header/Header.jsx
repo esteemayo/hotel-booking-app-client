@@ -86,66 +86,68 @@ const Header = () => {
           </div>
           <div className='header__searchItem'>
             <FontAwesomeIcon icon={faPerson} className='header__searchItem--icon' />
-            <span className='header__searchText'>{`${options.adults} adults . ${options.children} children . ${options.room} room`}</span>
-            <div className='options'>
-              <div className='options__item'>
-                <span className='options__text'>Adult</span>
-                <div className='options__counter'>
-                  <button
-                    disabled={options.adults <= 1}
-                    className='options__counter--btn'
-                    onClick={() => handleOption('adults', 'dec')}
-                  >
-                    -
-                  </button>
-                  <span className='options__counter--number'>{options.adults}</span>
-                  <button
-                    className='options__counter--btn'
-                    onClick={() => handleOption('adults', 'inc')}
-                  >
-                    +
-                  </button>
+            <span onClick={() => setOpenOptions(!openOptions)} className='header__searchText'>{`${options.adults} adults . ${options.children} children . ${options.room} room`}</span>
+            {openOptions && (
+              <div className='options'>
+                <div className='options__item'>
+                  <span className='options__text'>Adult</span>
+                  <div className='options__counter'>
+                    <button
+                      disabled={options.adults <= 1}
+                      className='options__counter--btn'
+                      onClick={() => handleOption('adults', 'dec')}
+                    >
+                      -
+                    </button>
+                    <span className='options__counter--number'>{options.adults}</span>
+                    <button
+                      className='options__counter--btn'
+                      onClick={() => handleOption('adults', 'inc')}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className='options__item'>
+                  <span className='options__text'>Children</span>
+                  <div className='options__counter'>
+                    <button
+                      disabled={options.children <= 0}
+                      className='options__counter--btn'
+                      onClick={() => handleOption('children', 'dec')}
+                    >
+                      -
+                    </button>
+                    <span className='options__counter--number'>{options.children}</span>
+                    <button
+                      className='options__counter--btn'
+                      onClick={() => handleOption('children', 'inc')}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className='options__item'>
+                  <span className='options__text'>Room</span>
+                  <div className='options__counter'>
+                    <button
+                      disabled={options.room <= 1}
+                      className='options__counter--btn'
+                      onClick={() => handleOption('room', 'dec')}
+                    >
+                      -
+                    </button>
+                    <span className='options__counter--number'>{options.room}</span>
+                    <button
+                      className='options__counter--btn'
+                      onClick={() => handleOption('room', 'inc')}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div className='options__item'>
-                <span className='options__text'>Children</span>
-                <div className='options__counter'>
-                  <button
-                    disabled={options.children <= 0}
-                    className='options__counter--btn'
-                    onClick={() => handleOption('children', 'dec')}
-                  >
-                    -
-                  </button>
-                  <span className='options__counter--number'>{options.children}</span>
-                  <button
-                    className='options__counter--btn'
-                    onClick={() => handleOption('children', 'inc')}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className='options__item'>
-                <span className='options__text'>Room</span>
-                <div className='options__counter'>
-                  <button
-                    disabled={options.room <= 1}
-                    className='options__counter--btn'
-                    onClick={() => handleOption('room', 'dec')}
-                  >
-                    -
-                  </button>
-                  <span className='options__counter--number'>{options.room}</span>
-                  <button
-                    className='options__counter--btn'
-                    onClick={() => handleOption('room', 'inc')}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
           <div className='header__searchItem'>
             <button className='header__btn'>Search</button>
