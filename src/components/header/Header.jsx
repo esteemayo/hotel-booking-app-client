@@ -111,7 +111,7 @@ const Header = () => {
                 <span className='options__text'>Children</span>
                 <div className='options__counter'>
                   <button
-                    disabled={options.children <= 1}
+                    disabled={options.children <= 0}
                     className='options__counter--btn'
                     onClick={() => handleOption('children', 'dec')}
                   >
