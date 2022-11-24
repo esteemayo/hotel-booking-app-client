@@ -98,4 +98,44 @@
     position: absolute;
     top: 5rem;
   }
+
+  .options {
+    position: absolute;
+    top: 5rem;
+    background-color: #fff;
+    color: gray;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.4);
+
+    &__item {
+      width: 20rem;
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem;
+    }
+
+    &__text {
+    }
+
+    &__counter {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.2rem;
+      color: #000;
+
+      &--btn {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #0071c2;
+        background-color: #fff;
+        color: #0071c2;
+        cursor: pointer;
+      }
+
+      &--number {
+      }
+    }
+  }
 }
