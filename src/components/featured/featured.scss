@@ -1,0 +1,39 @@
+.featured {
+  width: 100%;
+  max-width: 102.4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 1000;
+
+  &__item {
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    height: 25rem;
+
+    & > * {
+      border-radius: 1rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__titles {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+
+    h1 {
+      text-transform: capitalize;
+      font-size: 3.2rem;
+    }
+
+    h2 {
+      font-size: 2.6rem;
+    }
+  }
+}
