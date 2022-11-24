@@ -18,6 +18,12 @@ const Header = () => {
       key: 'selection',
     },
   ]);
+  const [openOptions, setOpenOptions] = useState(false);
+  const [options, setOptions] = useState({
+    adults: 1,
+    children: 0,
+    room: 1,
+  });
 
   return (
     <div className='header'>
@@ -76,7 +82,27 @@ const Header = () => {
           </div>
           <div className='header__searchItem'>
             <FontAwesomeIcon icon={faPerson} className='header__searchItem--icon' />
-            <span className='header__searchText'>2 adults 2 children 1 room</span>
+            <span className='header__searchText'>{`${options.adults} adults . ${options.children} children . ${options.room} room`}</span>
+            <div className='options'>
+              <div className='options__item'>
+                <span className='options__text'>Adult</span>
+                <button className='option__counterBtn'>-</button>
+                <span className='options__counterNumber'>1</span>
+                <button className='option__counterBtn'>+</button>
+              </div>
+              <div className='options__item'>
+                <span className='options__text'>Children</span>
+                <button className='option__counterBtn'>-</button>
+                <span className='options__counterNumber'>0</span>
+                <button className='option__counterBtn'>+</button>
+              </div>
+              <div className='options__item'>
+                <span className='options__text'>Room</span>
+                <button className='option__counterBtn'>-</button>
+                <span className='options__counterNumber'>1</span>
+                <button className='option__counterBtn'>+</button>
+              </div>
+            </div>
           </div>
           <div className='header__searchItem'>
             <button className='header__btn'>Search</button>
