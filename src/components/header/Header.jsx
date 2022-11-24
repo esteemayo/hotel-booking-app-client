@@ -86,21 +86,27 @@ const Header = () => {
             <div className='options'>
               <div className='options__item'>
                 <span className='options__text'>Adult</span>
-                <button className='option__counterBtn'>-</button>
-                <span className='options__counterNumber'>1</span>
-                <button className='option__counterBtn'>+</button>
+                <div className='options__counter'>
+                  <button className='options__counter--btn'>-</button>
+                  <span className='options__counter--number'>1</span>
+                  <button className='options__counter--btn'>+</button>
+                </div>
               </div>
               <div className='options__item'>
                 <span className='options__text'>Children</span>
-                <button className='option__counterBtn'>-</button>
-                <span className='options__counterNumber'>0</span>
-                <button className='option__counterBtn'>+</button>
+                <div className='options__counter'>
+                  <button className='options__counter--btn'>-</button>
+                  <span className='options__counter--number'>0</span>
+                  <button className='options__counter--btn'>+</button>
+                </div>
               </div>
               <div className='options__item'>
                 <span className='options__text'>Room</span>
-                <button className='option__counterBtn'>-</button>
-                <span className='options__counterNumber'>1</span>
-                <button className='option__counterBtn'>+</button>
+                <div className='options__counter'>
+                  <button className='options__counter--btn'>-</button>
+                  <span className='options__counter--number'>1</span>
+                  <button className='options__counter--btn'>+</button>
+                </div>
               </div>
             </div>
           </div>
