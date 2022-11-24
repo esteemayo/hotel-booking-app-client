@@ -101,6 +101,7 @@
   .date {
     position: absolute;
     top: 5rem;
+    z-index: 2000;
   }
 
   .options {
@@ -111,6 +112,7 @@
     border-radius: 0.5rem;
     -webkit-box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 1rem -0.5rem rgba(0, 0, 0, 0.4);
+    z-index: 2000;
 
     &__item {
       width: 20rem;
