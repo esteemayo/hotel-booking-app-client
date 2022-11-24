@@ -9,6 +9,10 @@
     width: 100%;
     max-width: 102.4rem;
     margin: 2rem 0 10rem 0;
+
+    &.listMode {
+      margin-bottom: 0;
+    }
   }
 
   &__list {
