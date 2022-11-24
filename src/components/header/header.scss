@@ -132,9 +132,10 @@
         background-color: #fff;
         color: #0071c2;
         cursor: pointer;
-      }
 
-      &--number {
+        &:disabled {
+          cursor: not-allowed;
+        }
       }
     }
   }
