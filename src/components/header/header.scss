@@ -1,0 +1,101 @@
+.header {
+  background-color: #003580;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__container {
+    width: 100%;
+    max-width: 102.4rem;
+    margin: 2rem 0 10rem 0;
+  }
+
+  &__list {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 5rem;
+
+    &--item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+
+      &.active {
+        border: 1px solid #fff;
+        padding: 1rem;
+        border-radius: 2rem;
+      }
+
+      span {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 3.2rem;
+  }
+
+  &__desc {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+  }
+
+  &__btn {
+    border: none;
+    font-weight: 500;
+    background-color: #0071c2;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  &__search {
+    height: 3rem;
+    width: 100%;
+    max-width: 102.4rem;
+    font-size: 1.6rem;
+    background-color: #fff;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem 0;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: -2.5rem;
+  }
+
+  &__searchItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &--icon {
+      color: lightgray;
+    }
+  }
+
+  &__searchInput {
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      font-size: 1.6rem;
+      color: lightgray;
+    }
+  }
+
+  &__searchText {
+    color: lightgray;
+    cursor: pointer;
+  }
+
+  .date {
+    position: absolute;
+    top: 5rem;
+  }
+}
