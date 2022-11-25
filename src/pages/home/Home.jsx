@@ -1,7 +1,8 @@
 import Featured from 'components/featured/Featured';
-import FeaturedProperties from 'components/featuredProperties/FeaturedProperties';
 import MailList from 'components/mailList/MailList';
 import ProperList from 'components/propertyList/ProperList';
+import FeaturedProperties from 'components/featuredProperties/FeaturedProperties';
+
 import './home.scss';
 
 const Home = () => {
