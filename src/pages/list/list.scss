@@ -55,6 +55,28 @@
         align-items: center;
         cursor: pointer;
       }
+
+      .option {
+        padding: 1rem;
+
+        &__item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          color: #555;
+          font-size: 1.2rem;
+        }
+
+        &__text {
+        }
+
+        &__input {
+          width: 5rem;
+          padding: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 
