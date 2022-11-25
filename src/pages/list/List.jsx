@@ -20,7 +20,7 @@ const List = () => {
             <h1 className='list__search--title'>Search</h1>
             <div className='list__search--item'>
               <label htmlFor='destination'>Destination</label>
-              <input type='text' id='destination' />
+              <input type='text' id='destination' placeholder={destination} />
             </div>
             <div className='list__search--item'>
               <label htmlFor='date'>Check-in-date</label>
