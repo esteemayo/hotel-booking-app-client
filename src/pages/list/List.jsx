@@ -24,7 +24,9 @@ const List = () => {
             </div>
             <div className='list__search--item'>
               <label htmlFor='date'>Check-in-date</label>
-              <input type='text' id='date' />
+              <span>
+                {`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`}
+              </span>
             </div>
           </div>
           <div className='list__result'></div>
