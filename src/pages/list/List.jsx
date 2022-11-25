@@ -82,6 +82,7 @@ const List = () => {
                 </div>
               </div>
             </div>
+            <button>Search</button>
           </div>
           <div className='list__result'></div>
         </div>
