@@ -40,44 +40,46 @@ const List = () => {
             </div>
             <div className='list__search--item'>
               <label>Options</label>
-              <div className='option__item'>
-                <span className='option__text'>
-                  Min price <small>per night</small>
-                </span>
-                <input type='number' className='option__input' />
-              </div>
-              <div className='option__item'>
-                <span className='option__text'>
-                  Max price <small>per night</small>
-                </span>
-                <input type='number' className='option__input' />
-              </div>
-              <div className='option__item'>
-                <span className='option__text'>Adult</span>
-                <input
-                  type='number'
-                  min={1}
-                  className='option__input'
-                  placeholder={options.adults}
-                />
-              </div>
-              <div className='option__item'>
-                <span className='option__text'>Children</span>
-                <input
-                  type='number'
-                  min={0}
-                  className='option__input'
-                  placeholder={options.children}
-                />
-              </div>
-              <div className='option__item'>
-                <span className='option__text'>Room</span>
-                <input
-                  type='number'
-                  min={1}
-                  className='option__input'
-                  placeholder={options.room}
-                />
+              <div className='option'>
+                <div className='option__item'>
+                  <span className='option__text'>
+                    Min price <small>per night</small>
+                  </span>
+                  <input type='number' className='option__input' />
+                </div>
+                <div className='option__item'>
+                  <span className='option__text'>
+                    Max price <small>per night</small>
+                  </span>
+                  <input type='number' className='option__input' />
+                </div>
+                <div className='option__item'>
+                  <span className='option__text'>Adult</span>
+                  <input
+                    type='number'
+                    min={1}
+                    className='option__input'
+                    placeholder={options.adults}
+                  />
+                </div>
+                <div className='option__item'>
+                  <span className='option__text'>Children</span>
+                  <input
+                    type='number'
+                    min={0}
+                    className='option__input'
+                    placeholder={options.children}
+                  />
+                </div>
+                <div className='option__item'>
+                  <span className='option__text'>Room</span>
+                  <input
+                    type='number'
+                    min={1}
+                    className='option__input'
+                    placeholder={options.room}
+                  />
+                </div>
               </div>
             </div>
           </div>
