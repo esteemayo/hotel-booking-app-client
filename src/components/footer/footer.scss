@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  max-width: 102.4rem;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+
+  &__lists {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+
+  &__list {
+    list-style: none;
+
+    &--item {
+      margin-bottom: 1rem;
+      color: #003580;
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    color: #333;
+  }
+}
