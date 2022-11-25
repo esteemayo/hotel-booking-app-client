@@ -56,6 +56,7 @@ const List = () => {
                 <span className='option__text'>Adult</span>
                 <input
                   type='number'
+                  min={1}
                   className='option__input'
                   placeholder={options.adults}
                 />
@@ -64,6 +65,7 @@ const List = () => {
                 <span className='option__text'>Children</span>
                 <input
                   type='number'
+                  min={0}
                   className='option__input'
                   placeholder={options.children}
                 />
@@ -72,6 +74,7 @@ const List = () => {
                 <span className='option__text'>Room</span>
                 <input
                   type='number'
+                  min={1}
                   className='option__input'
                   placeholder={options.room}
                 />
