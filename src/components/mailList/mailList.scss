@@ -1,0 +1,49 @@
+.mail {
+  width: 100%;
+  margin-top: 5rem;
+  background-color: #003580;
+  color: #fff;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  &__title {
+    font-size: 3.2rem;
+  }
+
+  &__desc {
+    font-size: 1.6rem;
+  }
+
+  &__inputContainer {
+    & > * {
+      border: none;
+      display: inline-block;
+      border-radius: 0.5rem;
+    }
+
+    input {
+      width: 30rem;
+      height: 3rem;
+      font-size: 1.6rem;
+      padding: 2rem 1.5rem;
+      margin-right: 1rem;
+
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
+
+    button {
+      height: 4.3rem;
+      padding: 1rem;
+      font-weight: 500;
+      font-size: 1.4rem;
+      background-color: #0071c2;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
