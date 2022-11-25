@@ -69,6 +69,11 @@
         }
 
         &__text {
+          text-transform: capitalize;
+
+          small {
+            text-transform: lowercase;
+          }
         }
 
         &__input {
@@ -77,6 +82,18 @@
           font-size: 1.2rem;
         }
       }
+    }
+
+    button {
+      border: none;
+      display: inline-block;
+      width: 100%;
+      padding: 1rem;
+      font-weight: 500;
+      background-color: #0071c2;
+      color: #fff;
+      border-radius: 3px;
+      cursor: pointer;
     }
   }
 
