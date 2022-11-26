@@ -56,15 +56,15 @@ const Hotel = () => {
           <div className='hotel__images'>
             {photos.map((item, index) => {
               return (
-                <div className='hotel__imgWrapper'>
+                <div key={index} className='hotel__imgWrapper'>
                   <img
                     src={item.src}
                     alt=''
                     className='hotel__img'
-                    onClick={handleOpen(index)}
+                    onClick={() => handleOpen(index)}
                   />
                 </div>
-              )
+              );
             })}
           </div>
           <div className='hotel__details'>
