@@ -7,6 +7,7 @@ import MailList from 'components/mailList/MailList';
 import './hotel.scss';
 
 const Hotel = () => {
+  const [open, setOpen] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
 
   const photos = [
