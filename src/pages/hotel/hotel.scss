@@ -1,0 +1,114 @@
+.hotel {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 102.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+
+    .bookNow {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      border: none;
+      display: inline-block;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      background-color: #0071c2;
+      color: #fff;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    text-transform: capitalize;
+    font-size: 2.4rem;
+  }
+
+  &__address {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__distance {
+    font-weight: 500;
+    color: #0071c2;
+  }
+
+  &__priceHighlight {
+    font-weight: 500;
+    color: #008009;
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__imgWrapper {
+    width: 33%;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  &__detailsTexts {
+    flex: 3;
+
+    &--desc {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__detailsPrice {
+    flex: 1;
+    background-color: #ebf3ff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+      font-size: 1.8rem;
+      color: #555;
+    }
+
+    span {
+      font-size: 1.4rem;
+    }
+
+    h2 {
+      font-weight: 300;
+    }
+
+    button {
+      border: none;
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      background-color: #0071c2;
+      color: #fff;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}
