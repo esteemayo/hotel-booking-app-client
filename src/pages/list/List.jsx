@@ -87,6 +87,13 @@ const List = () => {
           </div>
           <div className='list__result'>
             <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
           </div>
         </div>
       </div>
