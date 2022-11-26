@@ -54,14 +54,14 @@ const Hotel = () => {
             Book a stay over $114 at this property and get a free airport taxi
           </span>
           <div className='hotel__images'>
-            {photos.map((item) => {
+            {photos.map((item, index) => {
               return (
                 <div className='hotel__imgWrapper'>
                   <img
                     src={item.src}
                     alt=''
                     className='hotel__img'
-                    onClick={() => setSlideNumber(index)}
+                    onClick={handleOpen(index)}
                   />
                 </div>
               )
