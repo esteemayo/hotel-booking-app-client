@@ -52,6 +52,7 @@ const Hotel = () => {
                     src={item.src}
                     alt=''
                     className='hotel__img'
+                    onClick={() => setSlideNumber(index)}
                   />
                 </div>
               )
