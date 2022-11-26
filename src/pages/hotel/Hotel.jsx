@@ -1,8 +1,11 @@
+import Header from 'components/header/Header';
 import './hotel.scss';
 
 const Hotel = () => {
   return (
-    <div>Hotel</div>
+    <div>
+      <Header type='list' />
+    </div>
   );
 };
 
