@@ -82,7 +82,7 @@ const List = () => {
                 </div>
               </div>
             </div>
-            <button>Search</button>
+            <button className='list__search--btn'>Search</button>
           </div>
           <div className='list__result'>
             <SearchItem />
