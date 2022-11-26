@@ -48,7 +48,11 @@ const Hotel = () => {
             {photos.map((item) => {
               return (
                 <div className='hotel__imgWrapper'>
-                  <img src={item.src} alt='' className='hotel__img' />
+                  <img
+                    src={item.src}
+                    alt=''
+                    className='hotel__img'
+                  />
                 </div>
               )
             })}
