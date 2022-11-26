@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 import Header from 'components/header/Header';
+import MailList from 'components/mailList/MailList';
 import './hotel.scss';
 
 const Hotel = () => {
@@ -83,6 +84,7 @@ const Hotel = () => {
           </div>
         </div>
       </div>
+      <MailList />
     </div>
   );
 };
