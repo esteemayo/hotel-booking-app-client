@@ -83,8 +83,8 @@ const Hotel = () => {
             </div>
           </div>
         </div>
+        <MailList />
       </div>
-      <MailList />
     </div>
   );
 };
