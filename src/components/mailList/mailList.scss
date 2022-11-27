@@ -29,7 +29,7 @@
       height: 3rem;
       font-size: 1.6rem;
       padding: 2rem 1.5rem;
-      outline-color: #999;
+      outline-color: var(--color-gray-light);
       margin-right: 1rem;
 
       &::placeholder {
@@ -44,7 +44,7 @@
       font-size: 1.4rem;
       background-color: var(--color-secondary-blue);
       color: var(--color-white);
-      outline-color: #999;
+      outline-color: var(--color-gray-light);
       cursor: pointer;
     }
   }
