@@ -20,7 +20,7 @@
       display: inline-block;
       font-weight: bold;
       padding: 1rem 2rem;
-      background-color: #0071c2;
+      background-color: var(--color-secondary-blue);
       color: #fff;
       outline-color: #999;
       border-radius: 0.5rem;
@@ -42,7 +42,7 @@
 
   &__distance {
     font-weight: 500;
-    color: #0071c2;
+    color: var(--color-secondary-blue);
   }
 
   &__priceHighlight {
@@ -107,7 +107,7 @@
       display: inline-block;
       padding: 1rem 2rem;
       font-weight: bold;
-      background-color: #0071c2;
+      background-color: var(--color-secondary-blue);
       color: #fff;
       outline-color: #999;
       border-radius: 0.5rem;
