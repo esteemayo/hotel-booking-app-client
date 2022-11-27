@@ -1,3 +1,5 @@
+import './notfound.scss';
+
 const NotFound = () => {
   return (
     <div className='notFound'>
