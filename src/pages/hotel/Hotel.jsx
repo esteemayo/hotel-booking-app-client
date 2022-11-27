@@ -54,33 +54,33 @@ const Hotel = () => {
   return (
     <div>
       <Header type='list' />
-      <div className='hotel'>
-        {open && (
-          <div className='slider'>
-            <FontAwesomeIcon
-              icon={faCircleXmark}
-              className='close'
-              onClick={() => setOpen(false)}
-            />
-            <FontAwesomeIcon
-              icon={faCircleArrowLeft}
-              className='arrow'
-              onClick={() => handleClick('left')}
-            />
-            <div className='slider__wrapper'>
-              <img
-                src={photos[slideNumber].src}
-                alt=''
-                className='slider__img'
-              />
-            </div>
-            <FontAwesomeIcon
-              icon={faCircleArrowRight}
-              className='arrow'
-              onClick={() => handleClick('right')}
+      {open && (
+        <div className='slider'>
+          <FontAwesomeIcon
+            icon={faCircleXmark}
+            className='close'
+            onClick={() => setOpen(false)}
+          />
+          <FontAwesomeIcon
+            icon={faCircleArrowLeft}
+            className='arrow'
+            onClick={() => handleClick('left')}
+          />
+          <div className='slider__wrapper'>
+            <img
+              src={photos[slideNumber].src}
+              alt=''
+              className='slider__img'
             />
           </div>
-        )}
+          <FontAwesomeIcon
+            icon={faCircleArrowRight}
+            className='arrow'
+            onClick={() => handleClick('right')}
+          />
+        </div>
+      )}
+      <div className='hotel'>
         <div className='hotel__wrapper'>
           <button className='bookNow'>Reserve or Book Now!</button>
           <h1 className='hotel__title'>Grand hotel</h1>
