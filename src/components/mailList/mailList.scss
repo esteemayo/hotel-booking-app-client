@@ -2,7 +2,7 @@
   width: 100%;
   margin-top: 5rem;
   background-color: var(--color-primary-blue);
-  color: #fff;
+  color: var(--color-white);
   padding: 5rem;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@
       font-weight: 500;
       font-size: 1.4rem;
       background-color: var(--color-secondary-blue);
-      color: #fff;
+      color: var(--color-white);
       cursor: pointer;
     }
   }
