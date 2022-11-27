@@ -33,7 +33,7 @@
       width: max-content;
       font-size: 1.2rem;
       padding: 0.3rem;
-      background-color: #008009;
+      background-color: var(--color-green);
       color: var(--color-white);
       border-radius: 0.5rem;
     }
@@ -50,12 +50,12 @@
     &--cancelOp {
       font-weight: bold;
       font-size: 1.2rem;
-      color: #008009;
+      color: var(--color-green);
     }
 
     &--cancelOpSubtitle {
       font-size: 1.2rem;
-      color: #008009;
+      color: var(--color-green);
     }
   }
 
