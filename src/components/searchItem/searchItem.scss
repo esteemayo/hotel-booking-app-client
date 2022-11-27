@@ -81,7 +81,7 @@
         padding: 0.5rem;
         background-color: var(--color-primary-blue);
         color: var(--color-white);
-        outline-color: #999;
+        outline-color: var(--color-gray-light);
         border-radius: 2px;
       }
     }
@@ -108,7 +108,7 @@
       padding: 1rem 0.5rem;
       background-color: var(--color-secondary-blue);
       color: var(--color-white);
-      outline-color: #999;
+      outline-color: var(--color-gray-light);
       border-radius: 0.5rem;
       cursor: pointer;
     }
