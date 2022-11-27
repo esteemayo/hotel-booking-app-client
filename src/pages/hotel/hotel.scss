@@ -22,7 +22,7 @@
       padding: 1rem 2rem;
       background-color: var(--color-secondary-blue);
       color: var(--color-white);
-      outline-color: #999;
+      outline-color: var(--color-gray-light);
       border-radius: 0.5rem;
       cursor: pointer;
     }
@@ -109,7 +109,7 @@
       font-weight: bold;
       background-color: var(--color-secondary-blue);
       color: var(--color-white);
-      outline-color: #999;
+      outline-color: var(--color-gray-light);
       border-radius: 0.5rem;
       cursor: pointer;
     }
