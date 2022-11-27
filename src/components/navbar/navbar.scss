@@ -1,6 +1,6 @@
 .navbar {
   height: 5rem;
-  background-color: #003580;
+  background-color: var(--color-primary-blue);
   display: flex;
   justify-content: center;
 
@@ -23,7 +23,7 @@
       margin-left: 2rem;
       border: none;
       padding: 0.5rem 1rem;
-      color: #003580;
+      color: var(--color-primary-blue);
       border-radius: 2px;
       cursor: pointer;
     }
