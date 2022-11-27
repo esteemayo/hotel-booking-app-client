@@ -1,7 +1,7 @@
 .mail {
   width: 100%;
   margin-top: 5rem;
-  background-color: #003580;
+  background-color: var(--color-primary-blue);
   color: #fff;
   padding: 5rem;
   display: flex;
@@ -41,7 +41,7 @@
       padding: 1rem;
       font-weight: 500;
       font-size: 1.4rem;
-      background-color: #0071c2;
+      background-color: var(--color-secondary-blue);
       color: #fff;
       cursor: pointer;
     }
