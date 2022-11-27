@@ -1,3 +1,11 @@
+:root {
+  --color-white: #fff;
+  --color-green: #008009;
+  --color-yellow: #febb02;
+  --color-primary-blue: #003580;
+  --color-secondary-blue: #0071c2;
+}
+
 *,
 *::before,
 *::after {
