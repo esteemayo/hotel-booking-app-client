@@ -1,5 +1,5 @@
 .header {
-  background-color: #003580;
+  background-color: var(--color-primary-blue);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -50,7 +50,7 @@
   &__btn {
     border: none;
     font-weight: 500;
-    background-color: #0071c2;
+    background-color: var(--color-secondary-blue);
     color: #fff;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -135,9 +135,9 @@
       &--btn {
         width: 3rem;
         height: 3rem;
-        border: 1px solid #0071c2;
+        border: 1px solid var(--color-secondary-blue);
         background-color: #fff;
-        color: #0071c2;
+        color: var(--color-secondary-blue);
         cursor: pointer;
 
         &:disabled {
