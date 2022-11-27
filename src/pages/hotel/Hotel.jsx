@@ -16,6 +16,20 @@ const Hotel = () => {
     setOpen(true)
   };
 
+  const handleClick = (direction) => {
+    let newSlideNumber;
+
+    if (direction === 'left') {
+      newSlideNumber = slideNumber === 0 ? photos.length - 1 : slideNumber - 1;
+    }
+
+    if (direction === 'right') {
+      newSlideNumber = slideNumber === photos.length - 1 ? 0 : slideNumber + 1;
+    }
+
+    setSlideNumber(newSlideNumber);
+  };
+
   const photos = [
     {
       src: 'https://t-cf.bstatic.com/xdata/images/hotel/square600/286659200.webp?k=9206fc9239b3e4538c22d04b85213d6d5e6257015022de8a37effd956fcde4b6&o=&s=1',
