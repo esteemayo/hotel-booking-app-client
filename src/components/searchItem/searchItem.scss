@@ -34,7 +34,7 @@
       font-size: 1.2rem;
       padding: 0.3rem;
       background-color: #008009;
-      color: #fff;
+      color: var(--color-white);
       border-radius: 0.5rem;
     }
 
@@ -80,7 +80,7 @@
         font-weight: bold;
         padding: 0.5rem;
         background-color: var(--color-primary-blue);
-        color: #fff;
+        color: var(--color-white);
         border-radius: 2px;
       }
     }
@@ -106,7 +106,7 @@
       display: inline-block;
       padding: 1rem 0.5rem;
       background-color: var(--color-secondary-blue);
-      color: #fff;
+      color: var(--color-white);
       border-radius: 0.5rem;
       cursor: pointer;
     }
