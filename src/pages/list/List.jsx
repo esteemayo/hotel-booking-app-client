@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import { DateRange } from 'react-date-range';
 import { useLocation } from 'react-router-dom';
 
+import useFetch from 'hooks/useFetch';
 import Header from 'components/header/Header';
 import SearchItem from 'components/searchItem/SearchItem';
 import './list.scss';
@@ -13,6 +14,8 @@ const List = () => {
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(state.options);
   const [destination, setDestination] = useState(state.destination);
+
+  const { data, loading, error, refetch } = useFetch(`http://localhost:8800/api/v1/hotels?city=${destination}`);
 
   return (
     <div>
