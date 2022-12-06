@@ -1,3 +1,4 @@
+import useFetch from 'hooks/useFetch';
 import './featured.scss';
 
 const Featured = () => {
