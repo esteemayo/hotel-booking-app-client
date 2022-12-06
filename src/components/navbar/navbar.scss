@@ -16,6 +16,14 @@
   &__logo {
     font-weight: 500;
     font-size: 1.6rem;
+
+    a,
+    a:link,
+    a:visited {
+      color: inherit;
+      text-decoration: none;
+      display: inline-block;
+    }
   }
 
   &__items {
