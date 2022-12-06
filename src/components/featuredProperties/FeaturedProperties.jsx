@@ -11,7 +11,7 @@ const FeaturedProperties = () => {
         />
         <span className='featuredProperties__name'>Aparthotel Stare Miasto</span>
         <span className='featuredProperties__city'>Madrid</span>
-        <span className='featuredProperties__price'>Statrting from $120</span>
+        <span className='featuredProperties__price'>Starting from $120</span>
         <div className='featuredProperties__rating'>
           <button>4.9</button>
           <span>Excellent</span>
@@ -25,7 +25,7 @@ const FeaturedProperties = () => {
         />
         <span className='featuredProperties__name'>Aparthotel Stare Miasto</span>
         <span className='featuredProperties__city'>Madrid</span>
-        <span className='featuredProperties__price'>Statrting from $120</span>
+        <span className='featuredProperties__price'>Starting from $120</span>
         <div className='featuredProperties__rating'>
           <button>4.9</button>
           <span>Excellent</span>
@@ -39,7 +39,7 @@ const FeaturedProperties = () => {
         />
         <span className='featuredProperties__name'>Aparthotel Stare Miasto</span>
         <span className='featuredProperties__city'>Madrid</span>
-        <span className='featuredProperties__price'>Statrting from $120</span>
+        <span className='featuredProperties__price'>Starting from $120</span>
         <div className='featuredProperties__rating'>
           <button>4.9</button>
           <span>Excellent</span>
@@ -53,7 +53,7 @@ const FeaturedProperties = () => {
         />
         <span className='featuredProperties__name'>Aparthotel Stare Miasto</span>
         <span className='featuredProperties__city'>Madrid</span>
-        <span className='featuredProperties__price'>Statrting from $120</span>
+        <span className='featuredProperties__price'>Starting from $120</span>
         <div className='featuredProperties__rating'>
           <button>4.9</button>
           <span>Excellent</span>
