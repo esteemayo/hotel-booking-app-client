@@ -6,7 +6,7 @@ const Featured = () => {
 
   return (
     <div className='featured'>
-      {loading ? (
+      {/* {loading ? (
         'Loading please wait'
       ) : (
         <>
@@ -18,7 +18,7 @@ const Featured = () => {
             />
             <div className='featured__titles'>
               <h1>Madrid</h1>
-              <h2>{data.list[0]} properties</h2>
+              <h2>{data?.list[0]} properties</h2>
             </div>
           </div>
           <div className='featured__item'>
@@ -29,7 +29,7 @@ const Featured = () => {
             />
             <div className='featured__titles'>
               <h1>Barcelona</h1>
-              <h2>{data.list[1]} properties</h2>
+              <h2>{data?.list[1]} properties</h2>
             </div>
           </div>
           <div className='featured__item'>
@@ -40,11 +40,11 @@ const Featured = () => {
             />
             <div className='featured__titles'>
               <h1>London</h1>
-              <h2>{data.list[2]} properties</h2>
+              <h2>{data?.list[2]} properties</h2>
             </div>
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 };
