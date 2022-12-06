@@ -18,21 +18,22 @@ const ProperList = () => {
         'loading'
       ) : (
         <>
-          {data && images.map((item, index) => {
-            return (
-              <div key={index} className='propertyList__item'>
-                <img
-                  src={item}
-                  alt=''
-                  className='propertyList__img'
-                />
-                <div className='propertyList__title'>
-                  <h1>{data[index]?.type}</h1>
-                  <h2>{data[index]?.count} {data[index]?.type}</h2>
+          {data &&
+            images.map((item, index) => {
+              return (
+                <div key={index} className='propertyList__item'>
+                  <img
+                    src={item}
+                    alt=''
+                    className='propertyList__img'
+                  />
+                  <div className='propertyList__title'>
+                    <h1>{data[index]?.type}</h1>
+                    <h2>{data[index]?.count} {data[index]?.type}</h2>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </>
       )}
     </div>
