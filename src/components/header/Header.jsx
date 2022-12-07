@@ -6,12 +6,16 @@ import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons';
 
+import { useGlobalSearchContext } from 'context/search/SearchContext';
+
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import './header.scss';
 
 const Header = ({ type }) => {
   const navigate = useNavigate();
+  const { newSearch } = useGlobalSearchContext();
+
   const [openDate, setOpenDate] = useState(false);
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState([
