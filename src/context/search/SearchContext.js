@@ -4,12 +4,12 @@ import SearchReducer from './SearchReducer';
 import { NEW_SEARCH, RESET_SEARCH } from './SearchTypes';
 
 const INITIAL_STATE = {
-  city: undefined,
+  city: null,
   dates: [],
   options: {
-    adult: undefined,
-    children: undefined,
-    room: undefined,
+    adult: null,
+    children: null,
+    room: null,
   },
 };
 
@@ -19,6 +19,7 @@ const SearchProvider = ({ children }) => {
   const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
 
   const newSearch = (search) => {
+    console.log(search);
     dispatch({
       type: NEW_SEARCH,
       payload: search,
