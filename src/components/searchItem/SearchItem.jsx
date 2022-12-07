@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './searchItem.scss';
 
-const SearchItem = ({ name, slug, type, city, address, distance, photos, title, desc, rating, cheapestPrice }) => {
+const SearchItem = ({ name, slug, distance, photos, desc, rating, cheapestPrice }) => {
   return (
     <div className='searchItem'>
       <img
