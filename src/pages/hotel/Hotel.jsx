@@ -17,7 +17,7 @@ const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
 
   const { data, loading } = useFetch(`http://localhost:8800/api/v1/hotels/details/${slug}`);
-  console.log(data);
+
   const handleOpen = (index) => {
     setSlideNumber(index);
     setOpen(true)
