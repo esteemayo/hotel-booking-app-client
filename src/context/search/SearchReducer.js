@@ -5,7 +5,9 @@ const SearchReducer = (state, { type, payload }) => {
     case NEW_SEARCH:
       return {
         ...state,
-        payload
+        city: payload.destination,
+        dates: [...state.dates, payload.dates],
+        options: payload.options,
       };
 
     case RESET_SEARCH:
