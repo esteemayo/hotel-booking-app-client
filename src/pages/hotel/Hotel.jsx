@@ -7,11 +7,13 @@ import { faCircleArrowLeft, faCircleArrowRight, faLocationDot } from '@fortaweso
 import useFetch from 'hooks/useFetch';
 import Header from 'components/header/Header';
 import MailList from 'components/mailList/MailList';
+import { useGlobalSearchContext } from 'context/search/SearchContext';
 import './hotel.scss';
 
 const Hotel = () => {
   const { pathname } = useLocation();
   const slug = pathname.split('/')[2];
+  const { dates } = useGlobalSearchContext();
 
   const [open, setOpen] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
