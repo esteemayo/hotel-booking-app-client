@@ -38,7 +38,7 @@ const SearchProvider = ({ children }) => {
   );
 };
 
-export const useSearchGlobalContext = () => {
+export const useGlobalSearchContext = () => {
   return useContext(SearchContext);
 };
 
