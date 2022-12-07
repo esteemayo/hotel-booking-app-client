@@ -13,12 +13,21 @@ import './hotel.scss';
 const Hotel = () => {
   const { pathname } = useLocation();
   const slug = pathname.split('/')[2];
-  const { dates } = useGlobalSearchContext();
+  const { dates, options } = useGlobalSearchContext();
 
   const [open, setOpen] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
 
   const { data, loading } = useFetch(`http://localhost:8800/api/v1/hotels/details/${slug}`);
+
+  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+  function dayDifference(date1, date2) {
+    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
+    return diffDays;
+  };
+
+  const days = dayDifference(dates[0][0].endDate, dates[0][0].startDate);
 
   const handleOpen = (index) => {
     setSlideNumber(index);
@@ -104,13 +113,13 @@ const Hotel = () => {
                   <p className='hotel__detailsTexts--desc'>{data?.hotel?.desc}</p>
                 </div>
                 <div className='hotel__detailsPrice'>
-                  <h1>Perfect for a 9-night stay!</h1>
+                  <h1>Perfect for a {days}-night stay!</h1>
                   <span>
                     Located in the real heart of Krakow, this property has an
                     excellent location score of 4.9!
                   </span>
                   <h2>
-                    <b>$945</b> (9 nights)
+                    <b>${days * data?.hotel?.cheapestPrice * options.room}</b> ({days} nights)
                   </h2>
                   <button>Reserve or Book Now!</button>
                 </div>
