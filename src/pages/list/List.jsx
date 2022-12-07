@@ -10,7 +10,7 @@ import './list.scss';
 
 const List = () => {
   const { state } = useLocation();
-  const [date, setDate] = useState(state.date);
+  const [dates, setDates] = useState(state.dates);
   const [openDate, setOpenDate] = useState(false);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
@@ -39,13 +39,13 @@ const List = () => {
             <div className='list__search--item'>
               <label>Check-in-date</label>
               <span onClick={() => setOpenDate(!openDate)} className='searchText'>
-                {`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`}
+                {`${format(dates[0].startDate, 'MM/dd/yyyy')} to ${format(dates[0].endDate, 'MM/dd/yyyy')}`}
               </span>
               {openDate && (
                 <DateRange
-                  onChange={(item) => setDate([item.selection])}
+                  onChange={(item) => setDates([item.selection])}
                   minDate={new Date()}
-                  ranges={date}
+                  ranges={dates}
                 />
               )}
             </div>
