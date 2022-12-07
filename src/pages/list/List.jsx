@@ -12,10 +12,18 @@ const List = () => {
   const { state } = useLocation();
   const [date, setDate] = useState(state.date);
   const [openDate, setOpenDate] = useState(false);
+  const [min, setMin] = useState(undefined);
+  const [max, setMax] = useState(undefined);
   const [options, setOptions] = useState(state.options);
   const [destination, setDestination] = useState(state.destination);
 
-  const { data, loading, error, refetch } = useFetch(`http://localhost:8800/api/v1/hotels?city=${destination}`);
+  const { data, loading, error, reFetch } = useFetch(
+    `http://localhost:8800/api/v1/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
+  );
+
+  const handleClick = () => {
+    reFetch();
+  };
 
   return (
     <div>
@@ -48,13 +56,21 @@ const List = () => {
                   <span className='option__text'>
                     Min price <small>per night</small>
                   </span>
-                  <input type='number' className='option__input' />
+                  <input
+                    type='number'
+                    className='option__input'
+                    onChange={(e) => setMin(e.target.value)}
+                  />
                 </div>
                 <div className='option__item'>
                   <span className='option__text'>
                     Max price <small>per night</small>
                   </span>
-                  <input type='number' className='option__input' />
+                  <input
+                    type='number'
+                    className='option__input'
+                    onChange={(e) => setMax(e.target.value)}
+                  />
                 </div>
                 <div className='option__item'>
                   <span className='option__text'>Adult</span>
@@ -85,7 +101,7 @@ const List = () => {
                 </div>
               </div>
             </div>
-            <button className='list__search--btn'>Search</button>
+            <button onClick={handleClick} className='list__search--btn'>Search</button>
           </div>
           <div className='list__result'>
             {loading ? 'loading' : (
