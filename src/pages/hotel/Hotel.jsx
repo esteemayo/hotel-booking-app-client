@@ -27,11 +27,11 @@ const Hotel = () => {
     let newSlideNumber;
 
     if (direction === 'left') {
-      newSlideNumber = slideNumber === 0 ? photos.length - 1 : slideNumber - 1;
+      newSlideNumber = slideNumber === 0 ? data?.hotel?.photos.length - 1 : slideNumber - 1;
     }
 
     if (direction === 'right') {
-      newSlideNumber = slideNumber === photos.length - 1 ? 0 : slideNumber + 1;
+      newSlideNumber = slideNumber === data?.hotel?.photos.length - 1 ? 0 : slideNumber + 1;
     }
 
     setSlideNumber(newSlideNumber);
@@ -58,7 +58,6 @@ const Hotel = () => {
   //   },
   // ];
 
-  const { name, desc, photos, title, address, distance, cheapestPrice } = data?.hotel;
 
   return (
     <div>
@@ -79,7 +78,7 @@ const Hotel = () => {
               />
               <div className='slider__wrapper'>
                 <img
-                  src={photos[slideNumber]}
+                  src={data?.hotel?.photos[slideNumber]}
                   alt=''
                   className='slider__img'
                 />
@@ -94,24 +93,24 @@ const Hotel = () => {
           <div className='hotel'>
             <div className='hotel__wrapper'>
               <button className='bookNow'>Reserve or Book Now!</button>
-              <h1 className='hotel__title'>{name}</h1>
+              <h1 className='hotel__title'>{data?.hotel?.name}</h1>
               <div className='hotel__address'>
                 <FontAwesomeIcon icon={faLocationDot} />
-                <span>{address}</span>
+                <span>{data?.hotel?.address}</span>
               </div>
               <span className='hotel__distance'>
-                Excellent location - {distance}m from center
+                Excellent location - {data?.hotel?.distance}m from center
               </span>
               <span className='hotel__priceHighlight'>
-                Book a stay over ${cheapestPrice} at this property and get a free airport taxi
+                Book a stay over ${data?.hotel?.cheapestPrice} at this property and get a free airport taxi
               </span>
               <div className='hotel__images'>
-                {photos.map((item, index) => {
+                {data?.hotel?.photos.map((item, index) => {
                   return (
                     <div key={index} className='hotel__imgWrapper'>
                       <img
                         src={item}
-                        alt={name}
+                        alt={data?.hotel?.name}
                         className='hotel__img'
                         onClick={() => handleOpen(index)}
                       />
@@ -121,8 +120,8 @@ const Hotel = () => {
               </div>
               <div className='hotel__details'>
                 <div className='hotel__detailsTexts'>
-                  <h1 className='hotel__detailsTexts--title'>{title}</h1>
-                  <p className='hotel__detailsTexts--desc'>{desc}</p>
+                  <h1 className='hotel__detailsTexts--title'>{data?.hotel?.title}</h1>
+                  <p className='hotel__detailsTexts--desc'>{data?.hotel?.desc}</p>
                 </div>
                 <div className='hotel__detailsPrice'>
                   <h1>Perfect for a 9-night stay!</h1>
