@@ -88,14 +88,13 @@ const List = () => {
             <button className='list__search--btn'>Search</button>
           </div>
           <div className='list__result'>
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
+            {loading ? 'loading' : (
+              <>
+                {data?.hotels?.map((item) => {
+                  return <SearchItem key={item._id} {...item} />;
+                })}
+              </>
+            )}
           </div>
         </div>
       </div>
