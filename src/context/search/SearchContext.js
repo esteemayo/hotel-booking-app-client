@@ -19,7 +19,6 @@ const SearchProvider = ({ children }) => {
   const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
 
   const newSearch = (search) => {
-    console.log(search);
     dispatch({
       type: NEW_SEARCH,
       payload: search,
