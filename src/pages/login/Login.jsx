@@ -10,7 +10,7 @@ const initialState = {
   password: '',
 };
 
-const Login = () => {
+const Login = ({ inputs }) => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState(initialState);
   const { error, loading, loginFailure, loginStart, loginSuccess } = useGlobalAuthContext();
@@ -36,20 +36,19 @@ const Login = () => {
   return (
     <div className='login'>
       <div className='login__container'>
-        <input
-          type='text'
-          id='username'
-          placeholder='username'
-          onChange={handleChange}
-          className='login__input'
-        />
-        <input
-          id='password'
-          type='password'
-          placeholder='password'
-          onChange={handleChange}
-          className='login__input'
-        />
+        {inputs.map((input) => {
+          const { id, type, placeholder } = input;
+          return (
+            <input
+              id={id}
+              key={id}
+              type={type}
+              placeholder={placeholder}
+              onChange={handleChange}
+              className='login__input'
+            />
+          )
+        })}
         <button
           type='submit'
           disabled={loading}
