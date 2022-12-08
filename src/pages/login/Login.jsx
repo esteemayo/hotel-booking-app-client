@@ -47,7 +47,7 @@ const Login = ({ inputs }) => {
               onChange={handleChange}
               className='login__input'
             />
-          )
+          );
         })}
         <button
           type='submit'
