@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { loginInputs } from 'data';
 import ProtectedRoute from 'utils/ProtectedRoute';
+import { loginInputs, registerInputs } from 'data';
 import { Home, Hotel, Layout, List, Login, NotFound, Register } from 'pages';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Route path='register'
             element={
               <ProtectedRoute>
-                <Register />
+                <Register inputs={registerInputs} />
               </ProtectedRoute>
             }
           />
