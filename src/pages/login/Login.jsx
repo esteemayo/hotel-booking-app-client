@@ -13,7 +13,8 @@ const initialState = {
 const Login = ({ inputs }) => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState(initialState);
-  const { error, loading, loginFailure, loginStart, loginSuccess } = useGlobalAuthContext();
+  const { user, error, loading, loginFailure, loginStart, loginSuccess }
+    = useGlobalAuthContext();
 
   const handleChange = ({ target: input }) => {
     const { id, value } = input;
@@ -22,13 +23,13 @@ const Login = ({ inputs }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    loginStart();
 
     await handleLogin();
-    await navigate('/');
+    user && await navigate('/');
   };
 
   const handleLogin = async () => {
+    loginStart();
     try {
       const { data } = await login({ ...credentials });
       loginSuccess(data);
