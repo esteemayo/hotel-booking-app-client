@@ -52,8 +52,8 @@ const Login = () => {
         />
         <button
           type='submit'
-          onClick={handleSubmit}
           disabled={loading}
+          onClick={handleSubmit}
           className='login__button'
         >
           Login
