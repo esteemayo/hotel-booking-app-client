@@ -4,7 +4,13 @@ import { useGlobalAuthContext } from 'context/auth/AuthContext';
 import './navbar.scss';
 
 const Navbar = () => {
-  const { user } = useGlobalAuthContext();
+  const navigate = useNavigate();
+  const { user, logout } = useGlobalAuthContext();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <div className='navbar'>
@@ -16,7 +22,12 @@ const Navbar = () => {
           {user ? (
             <>
               <span>{user?.username}</span>
-              <button className='navbar__items--button'>Logout</button>
+              <button
+                onClick={handleLogout}
+                className='navbar__items--button'
+              >
+                Logout
+              </button>
             </>
           ) : (
             <>
