@@ -6,6 +6,7 @@ import { faCircleArrowLeft, faCircleArrowRight, faLocationDot } from '@fortaweso
 
 import useFetch from 'hooks/useFetch';
 import Header from 'components/header/Header';
+import Reserve from 'components/reserve/Reserve';
 import MailList from 'components/mailList/MailList';
 import { useGlobalAuthContext } from 'context/auth/AuthContext';
 import { useGlobalSearchContext } from 'context/search/SearchContext';
@@ -141,6 +142,7 @@ const Hotel = () => {
           </div>
         </>
       )}
+      {openModal && <Reserve onClose={setOpenModal} hotelId={data?.hotel?._id} />}
     </div>
   );
 };
