@@ -28,8 +28,8 @@ const SearchProvider = ({ children }) => {
   const resetSearch = () => {
     dispatch({
       type: RESET_SEARCH,
-    })
-  }
+    });
+  };
 
   return (
     <SearchContext.Provider value={{ ...state, newSearch, resetSearch }}>
