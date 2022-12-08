@@ -13,11 +13,11 @@ const SearchReducer = (state, { type, payload }) => {
     case RESET_SEARCH:
       return {
         ...state,
-      }
+      };
 
     default:
       return state;
-  }
+  };
 };
 
 export default SearchReducer;
