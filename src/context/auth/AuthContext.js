@@ -1,7 +1,7 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
 import AuthReducer from './AuthReducer';
-import { getFromStorage, tokenKey } from 'utils';
+import { getFromStorage, setToStorage, tokenKey } from 'utils';
 import { LOGIN_FAILURE, LOGIN_START, LOGIN_SUCCESS, LOGOUT } from './AuthTypes';
 
 const user = getFromStorage(tokenKey);
@@ -41,6 +41,10 @@ const AuthProvider = ({ children }) => {
       type: LOGOUT,
     });
   };
+
+  useEffect(() => {
+    setToStorage(tokenKey, state.user);
+  }, [state.user]);
 
   return (
     <AuthContext.Provider
