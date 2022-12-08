@@ -34,7 +34,7 @@ const Hotel = () => {
     setOpen(true)
   };
 
-  const handleClick = (direction) => {
+  const handleMove = (direction) => {
     let newSlideNumber;
 
     if (direction === 'left') {
@@ -63,7 +63,7 @@ const Hotel = () => {
               <FontAwesomeIcon
                 icon={faCircleArrowLeft}
                 className='arrow'
-                onClick={() => handleClick('left')}
+                onClick={() => handleMove('left')}
               />
               <div className='slider__wrapper'>
                 <img
@@ -75,7 +75,7 @@ const Hotel = () => {
               <FontAwesomeIcon
                 icon={faCircleArrowRight}
                 className='arrow'
-                onClick={() => handleClick('right')}
+                onClick={() => handleMove('right')}
               />
             </div>
           )}
