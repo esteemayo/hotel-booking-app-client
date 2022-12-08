@@ -11,12 +11,13 @@ const authFetch = Axios.create({
   baseURL: devEnv ? REACT_APP_DEV_API_URL : REACT_APP_PROD_API_URL,
   headers: {
     Accept: 'application/json',
+    'Content-Type': 'application/json',
   },
 });
 
 authFetch.interceptors.request.use(
   (config) => {
-    config.headers.common['Authorization'] = `Bearer ${getJWT()}`;
+    // config.headers.common['Authorization'] = `Bearer ${getJWT()}`;
     return config;
   }, (error) => {
     logger.log(error);
@@ -38,11 +39,16 @@ authFetch.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
+const setJwt = (token) => {
+  return authFetch.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+};
+
 const http = {
   get: authFetch.get,
   post: authFetch.post,
   patch: authFetch.patch,
   delete: authFetch.delete,
+  setJwt,
 };
 
 export default http;
