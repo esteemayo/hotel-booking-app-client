@@ -6,6 +6,7 @@ import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons';
 
+import { useGlobalAuthContext } from 'context/auth/AuthContext';
 import { useGlobalSearchContext } from 'context/search/SearchContext';
 
 import 'react-date-range/dist/styles.css';
@@ -14,6 +15,7 @@ import './header.scss';
 
 const Header = ({ type }) => {
   const navigate = useNavigate();
+  const { user } = useGlobalAuthContext();
   const { newSearch } = useGlobalSearchContext();
 
   const [openDate, setOpenDate] = useState(false);
