@@ -1,4 +1,3 @@
-import { setToStorage, tokenKey } from 'utils';
 import { LOGIN_FAILURE, LOGIN_START, LOGIN_SUCCESS, LOGOUT } from './AuthTypes';
 
 const AuthReducer = (state, { type, payload }) => {
@@ -15,7 +14,7 @@ const AuthReducer = (state, { type, payload }) => {
       return {
         ...state,
         loading: false,
-        user: setToStorage(tokenKey, payload),
+        user: payload,
         error: null,
       };
 
