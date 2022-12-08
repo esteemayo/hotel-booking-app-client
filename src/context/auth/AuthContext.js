@@ -1,8 +1,13 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
 
-import AuthReducer from './AuthReducer';
-import { getFromStorage, setToStorage, tokenKey } from 'utils';
 import * as actions from './AuthTypes';
+import AuthReducer from './AuthReducer';
+import {
+  getFromStorage,
+  removeFromStorage,
+  setToStorage,
+  tokenKey,
+} from 'utils';
 
 const user = getFromStorage(tokenKey);
 
@@ -38,6 +43,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    removeFromStorage();
     dispatch({
       type: actions.LOGOUT,
     });
