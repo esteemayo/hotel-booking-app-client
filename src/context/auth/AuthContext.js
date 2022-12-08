@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 
 import AuthReducer from './AuthReducer';
 import { getFromStorage, setToStorage, tokenKey } from 'utils';
-import { LOGIN_FAILURE, LOGIN_START, LOGIN_SUCCESS, LOGOUT } from './AuthTypes';
+import * as actions from './AuthTypes';
 
 const user = getFromStorage(tokenKey);
 
@@ -19,26 +19,26 @@ const AuthProvider = ({ children }) => {
 
   const loginStart = () => {
     dispatch({
-      type: LOGIN_START,
+      type: actions.LOGIN_START,
     });
   };
 
   const loginSuccess = (credentials) => {
     dispatch({
-      type: LOGIN_SUCCESS,
+      type: actions.LOGIN_SUCCESS,
       payload: credentials,
     });
   };
 
   const loginFailure = () => {
     dispatch({
-      type: LOGIN_FAILURE,
+      type: actions.LOGIN_FAILURE,
     });
   };
 
   const logout = () => {
     dispatch({
-      type: LOGOUT,
+      type: actions.LOGOUT,
     });
   };
 
