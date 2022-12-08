@@ -1,28 +1,29 @@
-import axios from 'axios';
+import Axios from 'axios';
 import { toast } from 'react-toastify';
 
 import logger from './logService';
+import { getJWT } from './authService';
 
 const devEnv = process.env.NODE_ENV !== 'production';
 const { REACT_APP_DEV_API_URL, REACT_APP_PROD_API_URL } = process.env;
 
-const API = axios.create({
+const authFetch = Axios.create({
   baseURL: devEnv ? REACT_APP_DEV_API_URL : REACT_APP_PROD_API_URL,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'application/json',
   },
 });
 
-API.interceptors.request.use((req) => {
-  req.headers.common['Authorization'] = `Bearer `;
-  return req;
-}, (error) => {
-  logger.log(error);
-  return Promise.reject(error);
-});
+authFetch.interceptors.request.use(
+  (config) => {
+    config.headers.common['Authorization'] = `Bearer ${getJWT()}`;
+    return config;
+  }, (error) => {
+    logger.log(error);
+    return Promise.reject(error);
+  });
 
-API.interceptors.response.use(null, (error) => {
+authFetch.interceptors.response.use(null, (error) => {
   const expectedError =
     error.response &&
     error.response.status >= 400 &&
@@ -38,10 +39,10 @@ API.interceptors.response.use(null, (error) => {
 });
 
 const http = {
-  get: API.get,
-  post: API.post,
-  patch: API.patch,
-  delete: API.delete,
+  get: authFetch.get,
+  post: authFetch.post,
+  patch: authFetch.patch,
+  delete: authFetch.delete,
 };
 
 export default http;
