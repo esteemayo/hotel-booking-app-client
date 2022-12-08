@@ -24,10 +24,14 @@ const Login = ({ inputs }) => {
     e.preventDefault();
     loginStart();
 
+    await handleLogin();
+    await navigate('/');
+  };
+
+  const handleLogin = async () => {
     try {
       const { data } = await login({ ...credentials });
       loginSuccess(data);
-      navigate('/');
     } catch (err) {
       loginFailure(err.response.data);
     }
