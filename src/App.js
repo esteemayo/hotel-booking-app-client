@@ -12,7 +12,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='hotels' element={<List />} />
           <Route path='hotels/:slug' element={<Hotel />} />
-          <Route path='/login'
+          <Route path='login'
             element={
               <ProtectedRoute>
                 <Login inputs={loginInputs} />
