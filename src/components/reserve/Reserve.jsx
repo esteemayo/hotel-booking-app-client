@@ -24,8 +24,8 @@ const Reserve = ({ onClose, hotelId }) => {
     let list = [];
 
     while (date <= end) {
-      list.push(new Date(date))
-      date.setDate(date.getTime() + 1);
+      list.push(new Date(date).getTime());
+      date.setDate(date.getDate() + 1);
     }
 
     return list;
