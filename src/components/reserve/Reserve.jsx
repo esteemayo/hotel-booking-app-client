@@ -4,15 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 import useFetch from 'hooks/useFetch';
+import { updateRoomAvailaibility } from 'services/roomService';
 import { useGlobalSearchContext } from 'context/search/SearchContext';
 import './reserve.scss';
-import { updateRoomAvailaibility } from 'services/roomService';
 
 const Reserve = ({ onClose, hotelId }) => {
+  const navigate = useNavigate();
   const { dates } = useGlobalSearchContext();
   const [selectedRooms, setSelectedRooms] = useState([]);
 
-  const { data, loading, error } = useFetch(`http://localhost:8800/api/v1/hotels/room/${hotelId}`);
+  const { data } = useFetch(`http://localhost:8800/api/v1/hotels/room/${hotelId}`);
 
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
@@ -56,6 +57,8 @@ const Reserve = ({ onClose, hotelId }) => {
         const res = updateRoomAvailaibility(roomId, { dates: allDates });
         return res.data;
       }));
+      onClose(false);
+      navigate('/');
     } catch (err) {
       console.log(err);
     }
