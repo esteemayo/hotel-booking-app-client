@@ -5,6 +5,7 @@ import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import useFetch from 'hooks/useFetch';
 import { useGlobalSearchContext } from 'context/search/SearchContext';
 import './reserve.scss';
+import { updateRoomAvailaibility } from 'services/roomService';
 
 const Reserve = ({ onClose, hotelId }) => {
   const { dates } = useGlobalSearchContext();
@@ -48,9 +49,16 @@ const Reserve = ({ onClose, hotelId }) => {
     );
   };
 
-  const handleClick = () => {
-    // 
-  }
+  const handleClick = async () => {
+    try {
+      await Promise.all(selectedRooms.map((roomId) => {
+        const res = updateRoomAvailaibility(roomId, { dates: allDates });
+        return res.data;
+      }))
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className='reserve'>
