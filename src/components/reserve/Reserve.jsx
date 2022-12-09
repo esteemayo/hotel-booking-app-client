@@ -54,7 +54,7 @@ const Reserve = ({ onClose, hotelId }) => {
       await Promise.all(selectedRooms.map((roomId) => {
         const res = updateRoomAvailaibility(roomId, { dates: allDates });
         return res.data;
-      }))
+      }));
     } catch (err) {
       console.log(err);
     }
