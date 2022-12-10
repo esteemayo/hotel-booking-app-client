@@ -13,7 +13,7 @@ const Reserve = ({ onClose, hotelId }) => {
   const { dates } = useGlobalSearchContext();
   const [selectedRooms, setSelectedRooms] = useState([]);
 
-  const { data } = useFetch(`http://localhost:8800/api/v1/hotels/room/${hotelId}`);
+  const { data } = useFetch(`/hotels/room/${hotelId}`);
 
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
