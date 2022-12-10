@@ -23,7 +23,7 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
 
-  const { data, loading } = useFetch(`http://localhost:8800/api/v1/hotels/details/${slug}`);
+  const { data, loading } = useFetch(`/hotels/details/${slug}`);
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
