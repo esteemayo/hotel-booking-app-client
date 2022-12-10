@@ -87,6 +87,8 @@
   &__searchInput {
     border: none;
     outline: none;
+    color: var(--color-gray-light);
+    caret-color: var(--color-yellow);
 
     &::placeholder {
       font-size: 1.6rem;
