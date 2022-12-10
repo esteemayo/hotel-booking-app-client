@@ -1,12 +1,28 @@
-import useFetch from 'hooks/useFetch';
+import { useEffect, useState } from 'react';
+
+import http from 'services/httpService';
 import './featured.scss';
 
 const Featured = () => {
-  const { data, loading } = useFetch('/hotels/count-by-city?cities=madrid,barcelona,london,lagos,paris,berlin');
+  const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      try {
+        const { data } = await http.get('/hotels/count-by-city?cities=madrid,barcelona,london');
+        setList(data.list);
+      } catch (err) {
+        console.log(err);
+      }
+      setLoading(false);
+    })();
+  }, []);
 
   return (
     <div className='featured'>
-      {/* {loading ? (
+      {loading ? (
         'Loading please wait'
       ) : (
         <>
@@ -18,7 +34,7 @@ const Featured = () => {
             />
             <div className='featured__titles'>
               <h1>Madrid</h1>
-              <h2>{data?.list[0]} properties</h2>
+              <h2>{list[0]} properties</h2>
             </div>
           </div>
           <div className='featured__item'>
@@ -29,7 +45,7 @@ const Featured = () => {
             />
             <div className='featured__titles'>
               <h1>Barcelona</h1>
-              <h2>{data?.list[1]} properties</h2>
+              <h2>{list[1]} properties</h2>
             </div>
           </div>
           <div className='featured__item'>
@@ -40,11 +56,11 @@ const Featured = () => {
             />
             <div className='featured__titles'>
               <h1>London</h1>
-              <h2>{data?.list[2]} properties</h2>
+              <h2>{list[2]} properties</h2>
             </div>
           </div>
         </>
-      )} */}
+      )}
     </div>
   );
 };
