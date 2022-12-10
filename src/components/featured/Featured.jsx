@@ -2,7 +2,7 @@ import useFetch from 'hooks/useFetch';
 import './featured.scss';
 
 const Featured = () => {
-  const { data, loading } = useFetch('http://localhost:8800/api/v1/hotels/count-by-city?cities=madrid,barcelona,london,lagos,paris,berlin');
+  const { data, loading } = useFetch('/hotels/count-by-city?cities=madrid,barcelona,london,lagos,paris,berlin');
 
   return (
     <div className='featured'>
