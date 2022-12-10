@@ -2,7 +2,7 @@ import useFetch from 'hooks/useFetch';
 import './propertyList.scss';
 
 const ProperList = () => {
-  const { data, loading } = useFetch('http://localhost:8800/api/v1/hotels/count-by-type');
+  const { data, loading } = useFetch('/hotels/count-by-type');
 
   const images = [
     'https://t-cf.bstatic.com/xdata/images/city/square250/808081.webp?k=741722d4e7757b648faf551d5566d2259d3a0f31824f5893aab9f37f43fc7232&o=',
