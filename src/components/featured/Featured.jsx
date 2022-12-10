@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { getHotelCountByCity } from 'services/hotelService';
 
-import http from 'services/httpService';
 import './featured.scss';
 
 const Featured = () => {
@@ -11,7 +11,7 @@ const Featured = () => {
     (async () => {
       setLoading(true);
       try {
-        const { data } = await http.get('/hotels/count-by-city?cities=madrid,barcelona,london');
+        const { data } = await getHotelCountByCity();
         setList(data.list);
       } catch (err) {
         console.log(err);
