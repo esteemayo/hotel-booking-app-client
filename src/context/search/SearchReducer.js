@@ -6,7 +6,7 @@ const SearchReducer = (state, { type, payload }) => {
       return {
         ...state,
         city: payload.destination,
-        dates: [...state.dates, payload.dates],
+        dates: [...payload.dates],
         options: payload.options,
       };
 
