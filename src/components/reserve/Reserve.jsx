@@ -11,6 +11,7 @@ import './reserve.scss';
 const Reserve = ({ onClose, hotelId }) => {
   const navigate = useNavigate();
   const { dates } = useGlobalSearchContext();
+  const { resetSearch } = useGlobalSearchContext();
   const [selectedRooms, setSelectedRooms] = useState([]);
 
   const { data } = useFetch(`/hotels/room/${hotelId}`);
@@ -57,6 +58,8 @@ const Reserve = ({ onClose, hotelId }) => {
         const res = updateRoomAvailaibility(roomId, { dates: allDates });
         return res.data;
       }));
+
+      resetSearch();
       onClose(false);
       navigate('/');
     } catch (err) {
