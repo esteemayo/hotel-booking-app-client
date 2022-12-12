@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+
+import { excerpts } from 'utils';
 import './searchItem.scss';
 
 const SearchItem = ({ name, slug, distance, photos, desc, rating, cheapestPrice }) => {
@@ -16,7 +18,7 @@ const SearchItem = ({ name, slug, distance, photos, desc, rating, cheapestPrice 
         <span className='searchItem__desc--subtitle'>
           Studio Apartment with air conditioning
         </span>
-        <span className='searchItem__desc--features'>{desc}</span>
+        <span className='searchItem__desc--features'>{desc && excerpts(desc, 100)}</span>
         <span className='searchItem__desc--cancelOp'>Free cancellation</span>
         <span className='searchItem__desc--cancelOpSubtitle'>
           You can cancel later, so look in this great price today!
