@@ -6,8 +6,8 @@ import { useLocation } from 'react-router-dom';
 import useFetch from 'hooks/useFetch';
 import Header from 'components/header/Header';
 import SearchItem from 'components/searchItem/SearchItem';
-import './list.scss';
 import { useGlobalSearchContext } from 'context/search/SearchContext';
+import './list.scss';
 
 const List = () => {
   const { state } = useLocation();
