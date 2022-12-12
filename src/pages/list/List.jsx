@@ -7,9 +7,12 @@ import useFetch from 'hooks/useFetch';
 import Header from 'components/header/Header';
 import SearchItem from 'components/searchItem/SearchItem';
 import './list.scss';
+import { useGlobalSearchContext } from 'context/search/SearchContext';
 
 const List = () => {
   const { state } = useLocation();
+  const { newSearch } = useGlobalSearchContext();
+
   const [dates, setDates] = useState(state.dates);
   const [openDate, setOpenDate] = useState(false);
   const [min, setMin] = useState(undefined);
@@ -21,7 +24,13 @@ const List = () => {
     `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
   );
 
+  const handleOption = ({ target: input }) => {
+    const { name, value } = input;
+    setOptions((prev) => ({ ...prev, [name]: +value }));
+  };
+
   const handleClick = () => {
+    newSearch({ destination, dates, options });
     reFetch();
   };
 
@@ -34,7 +43,12 @@ const List = () => {
             <h1 className='list__search--title'>Search</h1>
             <div className='list__search--item'>
               <label htmlFor='destination'>Destination</label>
-              <input type='text' id='destination' placeholder={destination} />
+              <input
+                type='text'
+                id='destination'
+                placeholder={destination}
+                onChange={(e) => setDestination(e.target.value)}
+              />
             </div>
             <div className='list__search--item'>
               <label>Check-in-date</label>
@@ -77,8 +91,10 @@ const List = () => {
                   <input
                     type='number'
                     min={1}
+                    name='adults'
                     className='option__input'
                     placeholder={options.adults}
+                    onChange={handleOption}
                   />
                 </div>
                 <div className='option__item'>
@@ -86,8 +102,10 @@ const List = () => {
                   <input
                     type='number'
                     min={0}
+                    name='children'
                     className='option__input'
                     placeholder={options.children}
+                    onChange={handleOption}
                   />
                 </div>
                 <div className='option__item'>
@@ -95,8 +113,10 @@ const List = () => {
                   <input
                     type='number'
                     min={1}
+                    name='room'
                     className='option__input'
                     placeholder={options.room}
+                    onChange={handleOption}
                   />
                 </div>
               </div>
