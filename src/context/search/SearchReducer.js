@@ -13,6 +13,13 @@ const SearchReducer = (state, { type, payload }) => {
     case RESET_SEARCH:
       return {
         ...state,
+        city: null,
+        dates: [],
+        options: {
+          adult: null,
+          children: null,
+          room: null,
+        },
       };
 
     default:
