@@ -107,7 +107,7 @@ const Hotel = () => {
                 Book a stay over ${data?.hotel?.cheapestPrice} at this property and get a free airport taxi
               </span>
               <div className='hotel__images'>
-                {data?.hotel?.photos.map((item, index) => {
+                {data?.hotel?.photos?.map((item, index) => {
                   return (
                     <div key={index} className='hotel__imgWrapper'>
                       <img
