@@ -17,7 +17,7 @@ const List = () => {
   const [options, setOptions] = useState(state.options);
   const [destination, setDestination] = useState(state.destination);
 
-  const { data, loading, error, reFetch } = useFetch(
+  const { data, loading, reFetch } = useFetch(
     `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
   );
 
