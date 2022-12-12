@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { format } from 'date-fns';
 import { DateRange } from 'react-date-range';
 import { useNavigate } from 'react-router-dom';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faCalendar, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons';
 
 import { useGlobalAuthContext } from 'context/auth/AuthContext';
 import { useGlobalSearchContext } from 'context/search/SearchContext';
