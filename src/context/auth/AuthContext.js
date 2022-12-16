@@ -11,6 +11,7 @@ import {
   tokenKey,
 } from 'utils';
 
+const token = getJWT();
 const user = getFromStorage(tokenKey);
 
 const INITIAL_STATE = {
@@ -19,7 +20,15 @@ const INITIAL_STATE = {
   error: null,
 };
 
-const token = getJWT();
+if (token) {
+  const decodedToken = jwtDecode(token);
+  const expiryDate = new Date().getTime();
+
+  if (decodedToken.exp * 1000 < expiryDate) {
+    removeFromStorage();
+    INITIAL_STATE.user = null;
+  }
+}
 
 const AuthContext = createContext(INITIAL_STATE);
 
