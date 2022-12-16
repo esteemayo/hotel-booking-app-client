@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 
 import * as actions from './AuthTypes';
 import AuthReducer from './AuthReducer';
+import { getJWT } from 'services/authService';
 import {
   getFromStorage,
   removeFromStorage,
@@ -16,6 +17,8 @@ const INITIAL_STATE = {
   loading: false,
   error: null,
 };
+
+const token = getJWT();
 
 const AuthContext = createContext(INITIAL_STATE);
 
