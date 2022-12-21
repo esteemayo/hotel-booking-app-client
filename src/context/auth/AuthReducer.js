@@ -34,6 +34,15 @@ const AuthReducer = (state, { type, payload }) => {
         error: null,
       };
 
+    case actions.RESET:
+      return {
+        ...state,
+        user: null,
+        success: false,
+        loading: false,
+        error: null,
+      };
+
     default:
       return state;
   };
