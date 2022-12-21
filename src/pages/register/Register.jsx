@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { RESET } from 'context/auth/AuthTypes';
 import { register } from 'services/userService';
 import { useGlobalAuthContext } from 'context/auth/AuthContext';
 import './register.scss';
@@ -8,7 +9,7 @@ import './register.scss';
 const Register = ({ inputs }) => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState(null);
-  const { user, error, loading, loginFailure, loginStart, loginSuccess }
+  const { user, error, success, loading, dispatch, loginFailure, loginStart, loginSuccess }
     = useGlobalAuthContext();
 
   const handleChange = ({ target: input }) => {
@@ -18,9 +19,7 @@ const Register = ({ inputs }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     await handleRegister();
-    user && await navigate('/');
   };
 
   const handleRegister = async () => {
@@ -32,6 +31,11 @@ const Register = ({ inputs }) => {
       loginFailure(err.response.data);
     }
   };
+
+  useEffect(() => {
+    user && success && navigate('/');
+    return () => dispatch({ type: RESET });
+  }, [user, success, dispatch, navigate]);
 
   return (
     <div className='register'>
