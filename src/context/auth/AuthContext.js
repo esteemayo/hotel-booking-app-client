@@ -71,6 +71,7 @@ const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         ...state,
+        dispatch,
         loginFailure,
         loginStart,
         loginSuccess,
