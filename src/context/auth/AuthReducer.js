@@ -6,6 +6,7 @@ const AuthReducer = (state, { type, payload }) => {
       return {
         ...state,
         user: null,
+        success: false,
         loading: true,
         error: null,
       };
@@ -15,6 +16,7 @@ const AuthReducer = (state, { type, payload }) => {
         ...state,
         loading: false,
         user: payload,
+        success: true,
         error: null,
       };
 
@@ -22,6 +24,7 @@ const AuthReducer = (state, { type, payload }) => {
       return {
         ...state,
         user: null,
+        success: false,
         loading: false,
         error: payload,
       };
