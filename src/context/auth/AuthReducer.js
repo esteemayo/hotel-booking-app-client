@@ -40,7 +40,6 @@ const AuthReducer = (state, { type, payload }) => {
     case actions.RESET:
       return {
         ...state,
-        user: null,
         success: false,
         loading: false,
         error: null,
