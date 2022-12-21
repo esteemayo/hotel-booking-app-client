@@ -32,7 +32,7 @@ const Login = ({ inputs }) => {
     loginStart();
     try {
       const { data } = await login({ ...credentials });
-      loginSuccess(data);
+      loginSuccess({ ...data.details });
     } catch (err) {
       loginFailure(err.response.data);
     }
