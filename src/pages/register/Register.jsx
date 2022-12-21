@@ -27,7 +27,7 @@ const Register = ({ inputs }) => {
     loginStart();
     try {
       const { data } = await register({ ...credentials });
-      loginSuccess(data);
+      loginSuccess({ ...data.details });
     } catch (err) {
       loginFailure(err.response.data);
     }
