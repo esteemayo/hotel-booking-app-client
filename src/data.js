@@ -28,6 +28,26 @@ export const registerInputs = [
     placeholder: 'email',
   },
   {
+    type: 'text',
+    id: 'country',
+    placeholder: 'Country',
+  },
+  {
+    type: 'text',
+    id: 'img',
+    placeholder: 'Image',
+  },
+  {
+    type: 'text',
+    id: 'city',
+    placeholder: 'City',
+  },
+  {
+    type: 'tel',
+    id: 'phone',
+    placeholder: 'Phone',
+  },
+  {
     type: 'password',
     id: 'password',
     placeholder: 'password',
