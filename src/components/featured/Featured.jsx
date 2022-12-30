@@ -29,7 +29,7 @@ const Featured = () => {
           <div className='featured__item'>
             <img
               className='featured__img'
-              src='https://t-cf.bstatic.com/xdata/images/city/square250/822312.webp?k=f0e5aa24884bf61ddc08284c59807fa7d3a66b72fbdcec15488faf45824143b6&o='
+              src='https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o='
               alt=''
             />
             <div className='featured__titles'>
@@ -40,7 +40,7 @@ const Featured = () => {
           <div className='featured__item'>
             <img
               className='featured__img'
-              src='https://t-cf.bstatic.com/xdata/images/city/square250/815261.webp?k=96c6465292cad5f9afffb2925a9f76b126d4675423300a6e63917f1fcf459a19&o='
+              src='https://cf.bstatic.com/xdata/images/city/max500/690334.webp?k=b99df435f06a15a1568ddd5f55d239507c0156985577681ab91274f917af6dbb&o='
               alt=''
             />
             <div className='featured__titles'>
@@ -51,7 +51,7 @@ const Featured = () => {
           <div className='featured__item'>
             <img
               className='featured__img'
-              src='https://t-cf.bstatic.com/xdata/images/city/square250/684500.webp?k=df54bcea224564a0a00497a2076d5338316a0b56692498eddb3c02c9a6cdde64&o='
+              src='https://cf.bstatic.com/xdata/images/city/max500/689422.webp?k=2595c93e7e067b9ba95f90713f80ba6e5fa88a66e6e55600bd27a5128808fdf2&o='
               alt=''
             />
             <div className='featured__titles'>
