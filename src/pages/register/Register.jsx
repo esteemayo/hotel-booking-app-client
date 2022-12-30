@@ -26,8 +26,23 @@ const Register = ({ inputs }) => {
 
   const handleRegister = async () => {
     loginStart();
+
+    const newUser = {
+      ...credentials,
+    };
+
+    const form = new FormData();
+    form.append('file', file);
+    form.append('upload_preset', 'booking');
+
     try {
-      const { data } = await register({ ...credentials });
+      if (file) {
+        const res = await uploadImage(form)
+        const { url } = res.data;
+        newUser.img = url;
+      }
+
+      const { data } = await register({ ...newUser });
       loginSuccess({ ...data.details });
     } catch (err) {
       loginFailure(err.response.data);
@@ -55,6 +70,11 @@ const Register = ({ inputs }) => {
             />
           );
         })}
+        <input
+          type='file'
+          className='register__input'
+          onChange={(e) => setFile(e.target.files[0])}
+        />
         <button
           type='submit'
           disabled={loading}
