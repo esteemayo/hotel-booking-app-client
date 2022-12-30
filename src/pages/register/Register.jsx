@@ -72,7 +72,7 @@ const Register = ({ inputs }) => {
         })}
         <input
           type='file'
-          className='register__input'
+          className='register__file'
           onChange={(e) => setFile(e.target.files[0])}
         />
         <button
