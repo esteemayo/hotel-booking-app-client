@@ -8,6 +8,7 @@ import './register.scss';
 
 const Register = ({ inputs }) => {
   const navigate = useNavigate();
+  const [file, setFile] = useState(null);
   const [credentials, setCredentials] = useState(null);
   const { user, error, success, loading, dispatch, loginFailure, loginStart, loginSuccess }
     = useGlobalAuthContext();
