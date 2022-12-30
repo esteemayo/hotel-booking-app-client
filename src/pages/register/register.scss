@@ -31,6 +31,12 @@
     }
   }
 
+  &__file {
+    display: inline-block;
+    width: 30rem;
+    height: 3rem;
+  }
+
   &__button {
     border: none;
     display: inline-block;
