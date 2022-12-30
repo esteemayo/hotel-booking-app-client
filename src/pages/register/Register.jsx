@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { RESET } from 'context/auth/AuthTypes';
 import { register } from 'services/userService';
+import { uploadImage } from 'services/imageService';
 import { useGlobalAuthContext } from 'context/auth/AuthContext';
 import './register.scss';
 
