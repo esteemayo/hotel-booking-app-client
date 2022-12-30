@@ -34,11 +34,6 @@ export const registerInputs = [
   },
   {
     type: 'text',
-    id: 'img',
-    placeholder: 'Image',
-  },
-  {
-    type: 'text',
     id: 'city',
     placeholder: 'City',
   },
