@@ -28,7 +28,7 @@ const SearchItem = ({ name, slug, distance, photos, desc, rating, cheapestPrice 
         {rating && (
           <div className='searchItem__details--rating'>
             <span>Excellent</span>
-            <button>{rating}</button>
+            <button>{rating.toFixed(1)}</button>
           </div>
         )}
         <div className='searchItem__details--texts'>
