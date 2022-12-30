@@ -22,7 +22,7 @@ const FeaturedProperties = () => {
                 <span className='featuredProperties__price'>Starting from ${cheapestPrice}</span>
                 {rating && (
                   <div className='featuredProperties__rating'>
-                    <button>{rating}</button>
+                    <button>{rating.toFixed(1)}</button>
                     <span>Excellent</span>
                   </div>
                 )}
