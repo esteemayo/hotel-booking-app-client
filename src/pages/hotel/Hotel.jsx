@@ -111,7 +111,13 @@ const Hotel = () => {
                 /> from center
               </span>
               <span className='hotel__priceHighlight'>
-                Book a stay over ${data?.hotel?.cheapestPrice} at this property and get a free airport taxi
+                Book a stay over
+                <NumericFormat
+                  value={data?.hotel?.cheapestPrice}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                  prefix={'$'}
+                /> at this property and get a free airport taxi
               </span>
               <div className='hotel__images'>
                 {data?.hotel?.photos?.map((item, index) => {
