@@ -73,7 +73,14 @@ const Header = ({ type }) => {
             <p className='header__desc'>Get rewarded for your travels - unlock instant savings of 10% or more
               with a free Bookingapp account
             </p>
-            {!user && <button className='header__btn'>Sign in / Register</button>}
+            {!user && (
+              <button
+                className='header__btn'
+                onClick={() => navigate('/login')}
+              >
+                Sign in / Register
+              </button>
+            )}
             <div className='header__search'>
               <div className='header__searchItem'>
                 <FontAwesomeIcon icon={faBed} className='header__icon' />
