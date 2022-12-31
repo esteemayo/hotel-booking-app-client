@@ -33,7 +33,14 @@ const SearchItem = ({ name, slug, distance, photos, desc, rating, cheapestPrice 
           </div>
         )}
         <div className='searchItem__details--texts'>
-          <span className='searchItem__details--price'>${cheapestPrice}</span>
+          <span className='searchItem__details--price'>
+            <NumericFormat
+              value={cheapestPrice}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'$'}
+            />
+          </span>
           <span className='searchItem__details--taxOp'>Includes taxes and fees</span>
           <Link to={`/hotels/${slug}`}>
             <button className='searchItem__details--checkbtn'>See availability</button>
