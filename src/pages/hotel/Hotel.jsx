@@ -102,7 +102,13 @@ const Hotel = () => {
                 <span>{data?.hotel?.address}</span>
               </div>
               <span className='hotel__distance'>
-                Excellent location - {data?.hotel?.distance}m from center
+                Excellent location -
+                <NumericFormat
+                  value={data?.hotel?.distance}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                  suffix={'m'}
+                /> from center
               </span>
               <span className='hotel__priceHighlight'>
                 Book a stay over ${data?.hotel?.cheapestPrice} at this property and get a free airport taxi
