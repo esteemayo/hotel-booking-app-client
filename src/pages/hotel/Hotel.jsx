@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NumericFormat } from 'react-number-format';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
