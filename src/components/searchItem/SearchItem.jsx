@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { NumericFormat } from 'react-number-format';
 
 import { excerpts } from 'utils';
 import './searchItem.scss';
