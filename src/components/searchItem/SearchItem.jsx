@@ -14,7 +14,14 @@ const SearchItem = ({ name, slug, distance, photos, desc, rating, cheapestPrice 
       />
       <div className='searchItem__desc'>
         <h1 className='searchItem__desc--title'>{name}</h1>
-        <span className='searchItem__desc--distance'>{distance}m from center</span>
+        <span className='searchItem__desc--distance'>
+          <NumericFormat
+            value={distance}
+            displayType={'text'}
+            thousandSeparator={true}
+            suffix={'m'}
+          /> from
+        </span>
         <span className='searchItem__desc--taxiOp'>Free airport taxi</span>
         <span className='searchItem__desc--subtitle'>
           Studio Apartment with air conditioning
