@@ -133,7 +133,15 @@ const Hotel = () => {
                     excellent location score of 4.9!
                   </span>
                   <h2>
-                    <b>${days * data?.hotel?.cheapestPrice * options.room}</b> ({days} nights)
+                    <b>
+                      <NumericFormat
+                        value={days * data?.hotel?.cheapestPrice * options.room}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'$'}
+                        style={{ fontSize: '2.4rem' }}
+                      />
+                    </b> ({days} nights)
                   </h2>
                   <button onClick={handleClick}>Reserve or Book Now!</button>
                 </div>
